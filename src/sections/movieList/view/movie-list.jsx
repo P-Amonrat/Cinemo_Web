@@ -5,7 +5,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMovieList } from 'src/reducers/movieSlice';
+import { fetchMovieList, getDetailById } from 'src/reducers/movieSlice';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import { useNavigate } from 'react-router-dom'
@@ -17,7 +17,8 @@ export default function MovieList() {
   const dispatch = useDispatch();
 
   const handleToDetail = (value) => {
-    navigate("/movie/detail", { state: { data: value } });
+    dispatch(getDetailById(value))
+    navigate("/movie/detail");
   }
 
   useEffect(() => {

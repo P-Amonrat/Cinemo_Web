@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useLocation } from 'react-router-dom';
-import { getDetailById, getFavoriteList } from 'src/reducers/movieSlice';
+import { getFavoriteList } from 'src/reducers/movieSlice';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
@@ -15,20 +14,11 @@ import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
 
 const MovieDetail = () => {
     const dispatch = useDispatch()
-    const location = useLocation()
     const { favoritList, item } = useSelector((state) => state.movie)
 
     const onClickFavorite = () => {
         dispatch(getFavoriteList(item))
     }
-
-    useEffect(() => {
-        const { data } = location.state
-
-        if (data) {
-            dispatch(getDetailById(data))
-        }
-    }, [location, dispatch])
 
     return (
         <Container maxWidth="xl">
