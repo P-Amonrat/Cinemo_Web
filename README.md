@@ -4,10 +4,10 @@
 
 ## Page List
 
-- [Movie List Page]
-- [Movie Detail Page]
-- [Favorit Movie Page]
-- [Login Page]
+- Movie List Page
+- Movie Detail Page
+- Favorit Movie Page
+- Login Page
 
 ## Contact us
 
